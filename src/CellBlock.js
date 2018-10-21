@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import Cell from './Cell'
+import styled from 'styled-components'
+
+const Block = styled.table`
+  border: 2px solid #63b6ff;
+  margin: -2px;
+`
 
 class CellBlock extends Component {
   render () {
     return (
-      <table>
+      <Block>
         <tr>
           <th> <Cell /> </th>
           <th> <Cell /> </th>
@@ -20,7 +26,7 @@ class CellBlock extends Component {
           <th> <Cell /> </th>
           <th> <Cell /> </th>
         </tr>
-      </table>
+      </Block>
     )
   }
 }

@@ -4,7 +4,7 @@ import CellBlock from './CellBlock'
 class App extends Component {
   render () {
     return (
-      <table>
+      <table style={{ borderCollapse: 'collapse' }}>
         <tr>
           <th> <CellBlock /> </th>
           <th> <CellBlock /> </th>
@@ -20,7 +20,7 @@ class App extends Component {
           <th> <CellBlock /> </th>
           <th> <CellBlock /> </th>
         </tr>
-      </table>
+      </table >
     )
   }
 }
