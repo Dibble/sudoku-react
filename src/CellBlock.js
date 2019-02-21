@@ -8,24 +8,37 @@ const Block = styled.table`
 `
 
 class CellBlock extends Component {
+  constructor (props) {
+    super(props)
+
+    this.cellClick = props.cellClick
+    this.selectedCell = props.selectedCell
+    this.row = props.row
+    this.column = props.column
+
+    console.log('cellblock', this.row, this.column)
+  }
+
   render () {
     return (
       <Block>
-        <tr>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-        </tr>
-        <tr>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-        </tr>
-        <tr>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-          <th> <Cell /> </th>
-        </tr>
+        <tbody>
+          <tr>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={this.row * 3} column={this.column * 3} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={this.row * 3} column={(this.column * 3) + 1} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={this.row * 3} column={(this.column * 3) + 2} /> </th>
+          </tr>
+          <tr>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 1} column={this.column * 3} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 1} column={(this.column * 3) + 1} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 1} column={(this.column * 3) + 2} /> </th>
+          </tr>
+          <tr>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 2} column={this.column * 3} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 2} column={(this.column * 3) + 1} /> </th>
+            <th> <Cell cellClick={this.cellClick} selectedCell={this.selectedCell} row={(this.row * 3) + 2} column={(this.column * 3) + 2} /> </th>
+          </tr>
+        </tbody>
       </Block>
     )
   }
